@@ -15,6 +15,8 @@ function addTask() {
     taskList.appendChild(createdItem);
     taskInput.value = "";
     taskInput.focus();
+
+    createdItem.classList.add("task");
 };
 
 form.addEventListener("click", function(add){
@@ -27,3 +29,19 @@ function clearTasks() {
 };
 
 clearButton.addEventListener("click", clearTasks);
+
+const suggestedTaskList = document.getElementById("suggested-tasks")
+
+function addSuggestedTask() {
+    let listItems = suggestedTaskList.querySelectorAll("li");
+    
+    listItems.forEach(item => {
+        item.addEventListener("click", function () {
+            suggestedTaskList.removeChild(item);
+            taskList.appendChild(item);
+            return;
+        });
+    });
+}
+addSuggestedTask();
+
