@@ -17,6 +17,9 @@ function addTask() {
     taskInput.focus();
 
     createdItem.classList.add("task");
+    createdItem.addEventListener("click", function () {
+        createdItem.style.backgroundColor = "#adc178";
+    });
 };
 
 form.addEventListener("click", function(add){
@@ -39,9 +42,19 @@ function addSuggestedTask() {
         item.addEventListener("click", function () {
             suggestedTaskList.removeChild(item);
             taskList.appendChild(item);
-            return;
+            item.classList.add("task");
+            
+            item.addEventListener("click", function () {
+                item.style.backgroundColor = "#adc178";
+            });
+            
         });
     });
 }
 addSuggestedTask();
 
+tasks = taskList.getElementsByClassName("task")
+
+tasks.addEventListener("click", function() {
+    tasks.style.backgroundColor = "green";
+})
