@@ -18,7 +18,7 @@ function addTask() {
 
     createdItem.classList.add("task");
     createdItem.addEventListener("click", function () {
-        createdItem.style.backgroundColor = "#adc178";
+        createdItem.style.backgroundColor = "#353535";
     });
 };
 
@@ -45,16 +45,10 @@ function addSuggestedTask() {
             item.classList.add("task");
             
             item.addEventListener("click", function () {
-                item.style.backgroundColor = "#adc178";
+                item.style.backgroundColor = "#353535";
             });
             
         });
     });
 }
 addSuggestedTask();
-
-tasks = taskList.getElementsByClassName("task")
-
-tasks.addEventListener("click", function() {
-    tasks.style.backgroundColor = "green";
-})
