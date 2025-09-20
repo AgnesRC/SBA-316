@@ -57,6 +57,9 @@ function addSuggestedTask() {
 }
 addSuggestedTask();
 
+const lastSuggestion = suggestedTaskList.lastElementChild;
+suggestedTaskList.removeChild(lastSuggestion);
+
 const upcomingList = document.getElementById("upcoming-list")
 const fragment = document.createDocumentFragment();
 const suggestedItem1 = document.createElement("li");
