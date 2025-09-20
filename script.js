@@ -1,3 +1,5 @@
+console.log("Browser Height: " + window.innerHeight + " and Browser Width: " + innerWidth);
+
 const taskInput = document.getElementById("task-box");
 const taskList = document.getElementById("task-list");
 const clearButton = document.getElementById("clear-button");
@@ -19,6 +21,7 @@ function addTask() {
     createdItem.classList.add("task");
     createdItem.addEventListener("click", function () {
         createdItem.style.backgroundColor = "#353535";
+        window.alert("Task Completed!")
     });
 };
 
@@ -46,9 +49,23 @@ function addSuggestedTask() {
             
             item.addEventListener("click", function () {
                 item.style.backgroundColor = "#353535";
+                window.alert("Task Completed!")
             });
             
         });
     });
 }
 addSuggestedTask();
+
+const upcomingList = document.getElementById("upcoming-list")
+const fragment = document.createDocumentFragment();
+const suggestedItem1 = document.createElement("li");
+suggestedItem1.textContent = "Schedule Appointment";
+suggestedItem1.setAttribute("class", "upcoming-task")
+const suggestedItem2 = document.createElement("li");
+suggestedItem2.textContent = "Change Oil";
+suggestedItem2.setAttribute("class", "upcoming-task")
+fragment.appendChild(suggestedItem1);
+fragment.appendChild(suggestedItem2);
+upcomingList.appendChild(fragment)
+
